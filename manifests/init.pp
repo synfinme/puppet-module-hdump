@@ -18,8 +18,6 @@ class hdump (
 ) {
   file { '/tmp/hdump-args.txt':
     ensure  => file,
-    owner   => root,
-    group   => root,
     mode    => '0644',
     content => epp("${module_name}/hdump-args.epp", {
       arg00 => $::hdump::arg00,
